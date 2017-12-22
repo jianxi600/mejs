@@ -4,16 +4,7 @@ var glob = require('glob');
 var Ex = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-/*
-=============
-1.“__dirname”：
-    是nodejs中的一个全局变量，它指向当前执行脚本所在的目录。
-2."path":
-    nodejs的模块，join是拼接路径
-2.运行方式：
-    npm run {script name}如：npm run build；具体的命令配置见package.json文件中的scripts
-============
-*/
+
 function getEntried(o){
     var files = glob.sync(o.src);
     var arr = [];
@@ -42,7 +33,7 @@ function getEntried(o){
 var webpack_config = {
 
     entry: {
-        me: [path.join(__dirname + '/src/me/me')] //me声明对象 首先加载
+        me: [path.join(__dirname + '/src/me/me')] 
     },
     output: {
         path: path.resolve(__dirname,"dist"),
